@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILTROS</title>
+  <script src="node_modules/lena.js/dist/browser.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+<link rel="icon" href="../node/imagenes/Lena.js.jpg">
+
+  <style>
+
+    body {
+    font-family: 'Montserrat', cursive;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+
+  .imagen-original{
+   position: center;
+  }
+
+button{
+    background-color: #222;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    font-size: 11px;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+  }
+</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Filtros Lena.js</h1>
+    <img src="../node/imagenes/Lena.js.jpg" id="leno"/>
+    
+    <canvas id="imagen"></canvas>
+    <br>
+    <br>
+    <br>
+
+<button onclick="Grayscale();">Grayscale</button>
+<button onclick="sepia();">Sepia</button>
+<button onclick="Thresholding();">Thresholding</button>
+<button onclick="Invert();">Invert+</button>
+<button onclick="Saturation();">Saturation</button>
+<button onclick="Red();">Red</button>
+<button onclick="Green();">Green</button> 
+<button onclick="Blue();">Blue</button> 
+<button onclick="Mirror();">Mirror</button>
+<button onclick="Roberts();">Roberts</button>
+<br> <br>
+<button onclick="sharpen();">Sharpen</button>
+<button onclick="sobelH();">sobelHorizontal</button>
+<button onclick="sobelV();">sobelVertical</button>
+<button onclick="highpass();">highpass</button>   
+<button onclick="lowpass3();">lowpass3</button>
+<button onclick="lowpass5();">lowpass5</button>
+<button onclick="Laplacian();">Laplacian-</button>
+<button onclick="Gaussian();">Gaussian</button>
+<br> <br>
+<button onclick="Biggaussian();">Biggaussian</button>
+<button onclick="Prewitthorizontal();">Prewitthorizontal</button>
+<button onclick="Prewittvertical();">Prewittvertical</button>   
+<button onclick="Canny ();">Canny </button>   
+    
+
+    <script type="text/javascript">
+        function Red () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["red"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+
+    function Biggaussian () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["bigGaussian"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Blue () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["blue"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function brillo () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["brightness"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    
+    function Canny () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["canny"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function contraste () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["contrast"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Gaussian () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["gaussian"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Grayscale () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["grayscale"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Green () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["green"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function highpass () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["highpass"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Invert () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["invert"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Laplacian() {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["laplacian"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function lowpass3 () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["lowlowpass3"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function lowpass5 () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["lowlowpass5"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Mirror () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["mirror"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function NOISE () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["noise"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Prewitthorizontal () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["prewittHorizontal"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Prewittvertical() {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["prewittVertical"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Roberts () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["roberts"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function Saturation () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["saturation"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function sepia () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["sepia"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function sharpen () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["sharpen"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function sobelH () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["sobelHorizontal"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    function sobelV () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["sobelVertical"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+
+    }   function Thresholding () {  
+        var imagenOriginal = document.getElementById("leno");
+        var imagenFiltradaCanvas=document.getElementById("imagen");
+        var filter= LenaJS ["thresholding"];
+        
+        LenaJS.filterImage(imagenFiltradaCanvas, filter, imagenOriginal);
+    }
+    
+
+    </script>
+</body>
+</html>
